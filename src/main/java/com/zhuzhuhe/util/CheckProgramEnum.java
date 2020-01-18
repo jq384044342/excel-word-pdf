@@ -8,8 +8,8 @@ import org.apache.commons.lang3.StringUtils;
  * 检测项目枚举类
  */
 public enum CheckProgramEnum {
-    AQP4_MOG_GFAP("AQP4+MOG+GFAP三项抗体检测",new String[]{"抗AQP4抗体IgG4","抗MOG抗体IgG","抗GFAP抗体IgG4"},4),
-    AQP4_MOG_GFAP_DISCOUNT("AQP4+MOG+GFAP三项抗体检测优惠套餐",new String[]{"抗AQP4抗体IgG4","抗MOG抗体IgG","抗GFAP抗体IgG4"},4),
+    AQP4_MOG_GFAP("AQP4+MOG+GFAP三项抗体检测",new String[]{"抗AQP4抗体IgG","抗MOG抗体IgG","抗GFAP抗体IgG"},4),
+    AQP4_MOG_GFAP_DISCOUNT("AQP4+MOG+GFAP三项抗体检测优惠套餐",new String[]{"抗AQP4抗体IgG","抗MOG抗体IgG","抗GFAP抗体IgG"},4),
     a1("副肿瘤六项抗体检测",new String[]{"抗Hu抗体IgG","抗Yo抗体IgG","抗Ri抗体IgG","抗CV2抗体IgG","抗Ma2抗体IgG","抗Amphiphysin抗体IgG"},0),
     a2("副肿瘤十四项抗体检测",new String[]{"抗Hu抗体IgG","抗Yo抗体IgG","抗Ri抗体IgG","抗CV2抗体IgG","抗Ma2抗体IgG","抗Amphiphysin抗体IgG","抗Ma1抗体IgG","抗SOX1抗体IgG","抗Tr(DNER)抗体IgG","抗Zic4抗体IgG","抗GAD65抗体IgG","抗PKCγ抗体IgG","抗Recoverin抗体IgG","抗Titin抗体IgG"},0),
     a3("副肿瘤十四项抗体检测优惠套餐",new String[]{"抗Hu抗体IgG","抗Yo抗体IgG","抗Ri抗体IgG","抗CV2抗体IgG","抗Ma2抗体IgG","抗Amphiphysin抗体IgG","抗Ma1抗体IgG","抗SOX1抗体IgG","抗Tr(DNER)抗体IgG","抗Zic4抗体IgG","抗GAD65抗体IgG","抗PKCγ抗体IgG","抗Recoverin抗体IgG","抗Titin抗体IgG"},0),

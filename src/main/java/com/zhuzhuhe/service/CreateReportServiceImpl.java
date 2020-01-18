@@ -47,8 +47,21 @@ public class CreateReportServiceImpl {
 
             //检测结果处理
             for (int i = 0; i < checkProgramEnum.getProgramName().length; i++) {
-                if (null != reportEntity.getResults() && reportEntity.getResults().size() > 0 && reportEntity.getResults().contains(String.valueOf(i))) {
-                    map.put("result" + i, "阳性");
+                if (null != reportEntity.getResults() && reportEntity.getResults().size() > 0 && startWith(reportEntity.getResults(), String.valueOf(i))) {
+                    List<String> results = reportEntity.getResults();
+                    String s = null;
+                    for (String result : results) {
+                        if(result.startsWith(String.valueOf(i))){
+                            s = result;
+                            break;
+                        }
+                    }
+                    if(s.contains("(")&&s.contains(")")){
+                        String substring = s.substring(s.indexOf("("), s.indexOf(")"));
+                        map.put("result" + i, substring);
+                    }else {
+                        map.put("result" + i, "+");
+                    }
                 } else {
                     map.put("result" + i, "阴性");
                 }
@@ -56,7 +69,7 @@ public class CreateReportServiceImpl {
 
             //图片处理
             for (int i = 0; i < checkProgramEnum.getPicNum(); i++) {
-                if(null!= reportEntity.getPicsPath() &&reportEntity.getPicsPath().size()>i){
+                if (null != reportEntity.getPicsPath() && reportEntity.getPicsPath().size() > i) {
                     map.put("pics" + i, new PictureRenderData(250, 155, reportEntity.getPicsPath().get(i)));
                 }
             }
@@ -195,8 +208,8 @@ public class CreateReportServiceImpl {
                     //O(n^2)待优化
                     for (int i = 0; i < programName.length; i++) {
                         for (String s : split) {
-                            if (s.equals(programName[i])) {
-                                checkRes.add(String.valueOf(i));
+                            if (s.startsWith(programName[i])) {
+                                checkRes.add(String.valueOf(i) + s);
                             }
                         }
                     }
@@ -239,5 +252,14 @@ public class CreateReportServiceImpl {
             e.printStackTrace();
         }
         return list;
+    }
+
+    public boolean startWith(List<String> list, String i) {
+        for (String s : list) {
+            if (s.startsWith(i)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
