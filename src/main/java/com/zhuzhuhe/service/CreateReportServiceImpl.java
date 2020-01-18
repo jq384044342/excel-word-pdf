@@ -57,7 +57,7 @@ public class CreateReportServiceImpl {
                         }
                     }
                     if(s.contains("(")&&s.contains(")")){
-                        String substring = s.substring(s.indexOf("("), s.indexOf(")"));
+                        String substring = s.substring(s.indexOf("(")+1, s.indexOf(")"));
                         map.put("result" + i, substring);
                     }else {
                         map.put("result" + i, "+");

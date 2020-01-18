@@ -77,8 +77,9 @@ public class ExcelUtils {
         sheet = wb.getSheetAt(0);
         // 得到总行数
         int rowNum = sheet.getLastRowNum();
-        row = sheet.getRow(10);
-        int colNum = row.getPhysicalNumberOfCells();
+        row = sheet.getRow(9);
+//        int colNum = row.getPhysicalNumberOfCells();
+        int colNum = 19;
         List<? extends PictureData> pictures = wb.getAllPictures();
 
 
